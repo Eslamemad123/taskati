@@ -56,92 +56,90 @@ class _EditProfile_ScreenState extends State<EditProfile_Screen> {
           child: Icon(Icons.arrow_back, color: App_Color.PrimaryColorBlue),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            GestureDetector(
-              onTap: () {
-                ButtomSheetImage(context, isdark);
-              },
-              child: Stack(
-                children: [
-                  CircleAvatar(
-                    radius: 81,
-                    backgroundColor: App_Color.PrimaryColorBlue,
-                    child: CircleAvatar(
-                      radius: 80,
-                      backgroundColor: App_Color.white,
-                      backgroundImage:
-                          Path != null
-                              ? FileImage(File(Path!))
-                              : FileImage(File(image)),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          GestureDetector(
+            onTap: () {
+              ButtomSheetImage(context, isdark);
+            },
+            child: Stack(
+              children: [
+                CircleAvatar(
+                  radius: 81,
+                  backgroundColor: App_Color.PrimaryColorBlue,
+                  child: CircleAvatar(
+                    radius: 80,
+                    backgroundColor: App_Color.white,
+                    backgroundImage:
+                        Path != null
+                            ? FileImage(File(Path!))
+                            : FileImage(File(image)),
+                  ),
+                ),
+                Positioned(
+                  right: 5,
+                  bottom: 5,
+                  child: Container(
+                    width: 35,
+                    height: 35,
+                    decoration: BoxDecoration(
+                      color: isdark ? App_Color.black : App_Color.white,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Icon(
+                      Icons.camera_alt,
+                      color: App_Color.PrimaryColorBlue,
                     ),
                   ),
-                  Positioned(
-                    right: 5,
-                    bottom: 5,
-                    child: Container(
-                      width: 35,
-                      height: 35,
-                      decoration: BoxDecoration(
-                        color: isdark ? App_Color.black : App_Color.white,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
+                ),
+              ],
+            ),
+          ),
+          Gap(50),
+      
+          Divider(
+            thickness: 1,
+            indent: 30,
+            endIndent: 30,
+            color: App_Color.PrimaryColorBlue,
+          ),
+          Gap(50),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '$name',
+                  style: Text_style.getTital(
+                    color: App_Color.PrimaryColorBlue,
+                    Font_Weight: FontWeight.w600,
+                    Size: 22,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    ButtomSheetName(context, nameController, isdark);
+                  },
+                  child: CircleAvatar(
+                    radius: 18,
+                    backgroundColor: App_Color.PrimaryColorBlue,
+                    child: CircleAvatar(
+                      backgroundColor:
+                          isdark ? App_Color.black : App_Color.white,
+                      radius: 17,
                       child: Icon(
-                        Icons.camera_alt,
+                        Icons.edit,
                         color: App_Color.PrimaryColorBlue,
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Gap(50),
-
-            Divider(
-              thickness: 1,
-              indent: 30,
-              endIndent: 30,
-              color: App_Color.PrimaryColorBlue,
-            ),
-            Gap(50),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    '$name',
-                    style: Text_style.getTital(
-                      color: App_Color.PrimaryColorBlue,
-                      Font_Weight: FontWeight.w600,
-                      Size: 22,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      ButtomSheetName(context, nameController, isdark);
-                    },
-                    child: CircleAvatar(
-                      radius: 18,
-                      backgroundColor: App_Color.PrimaryColorBlue,
-                      child: CircleAvatar(
-                        backgroundColor:
-                            isdark ? App_Color.black : App_Color.white,
-                        radius: 17,
-                        child: Icon(
-                          Icons.edit,
-                          color: App_Color.PrimaryColorBlue,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
