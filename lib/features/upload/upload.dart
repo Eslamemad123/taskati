@@ -2,12 +2,16 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:taskati/components/buttons/main%20button.dart';
+import 'package:taskati/core/extentions/navigation.dart';
 import 'package:taskati/core/extentions/snackbar.dart';
+import 'package:taskati/core/services/helpel.dart';
 import 'package:taskati/core/utils/app%20assets.dart';
 import 'package:taskati/core/utils/app%20color.dart';
 import 'package:taskati/core/utils/text%20style.dart';
+import 'package:taskati/features/home/home%20screen.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class Upload_Screen extends StatefulWidget {
@@ -35,7 +39,14 @@ class _Upload_ScreenState extends State<Upload_Screen> {
             child: TextButton(
               onPressed: () {
                 if (nameController.text.isNotEmpty && Path != null) {
-                  ShowErrorDialog(context, "corect");
+                  Local_Helper.cachUserData(
+                    Local_Helper.KeyName,
+                    nameController.text,
+                  );
+                  Local_Helper.cachUserData(Local_Helper.KeyImage, Path);
+                  Local_Helper.cachUserData(Local_Helper.KeyisUpload, true);
+
+                  pushAndRemoveUntil(context, Home_Screen());
                 } else if (nameController.text.isNotEmpty && Path == null) {
                   ShowErrorDialog(context, "please upload photo");
                 } else if (nameController.text.isEmpty && Path == null) {
@@ -51,7 +62,7 @@ class _Upload_ScreenState extends State<Upload_Screen> {
                 'Done',
                 style: Text_style.getSmall(
                   color: App_Color.PrimaryColorBlue,
-                  Weight: FontWeight.bold,
+                  Font_Weight: FontWeight.bold,
                 ),
               ),
             ),
@@ -73,7 +84,7 @@ class _Upload_ScreenState extends State<Upload_Screen> {
                         : AssetImage(App_Assets.userPhoto),
               ),
               Gap(20),
-              MAin_BUtton(
+              Main_Button(
                 text: 'Upload From Camera',
                 onPressed: () {
                   UploadImage(true);
@@ -81,7 +92,7 @@ class _Upload_ScreenState extends State<Upload_Screen> {
                 width: 250,
               ),
               Gap(10),
-              MAin_BUtton(
+              Main_Button(
                 text: 'Upload From Galary',
                 onPressed: () async {
                   UploadImage(false);

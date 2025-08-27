@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:taskati/core/utils/app%20color.dart';
 import 'package:taskati/core/utils/text%20style.dart';
 
-class MAin_BUtton extends StatelessWidget {
-  MAin_BUtton({
+class Main_Button extends StatelessWidget {
+  Main_Button({
     super.key,
     required this.text,
     this.width = double.infinity,
@@ -30,7 +30,7 @@ class MAin_BUtton extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
         ),
-        
+
         child: Text(text, style: Text_style.getBody(color: App_Color.white)),
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-pushTO(BuildContext context, Widget page) {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+Future pushTO(BuildContext context, Widget page) {
+  return Navigator.push(context, MaterialPageRoute(builder: (context) => page));
 }
 
 pushReplacement(BuildContext context, Widget page) {
