@@ -112,55 +112,57 @@ class _AddEdit_TaskState extends State<AddEdit_Task> {
           ),
         ),
       ),
-      body: Form(
-        key: formKey,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Text(
-                  'Title',
-                  style: Text_style.getBody(
-                    Font_Weight: FontWeight.w500,
-                    Size: 17,
+      body: SingleChildScrollView(
+        child: Form(
+          key: formKey,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Text(
+                    'Title',
+                    style: Text_style.getBody(
+                      Font_Weight: FontWeight.w500,
+                      Size: 17,
+                    ),
                   ),
                 ),
-              ),
-              TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'please enter title of task';
-                  }
-                },
-                controller: title,
-                decoration: InputDecoration(hintText: 'Enter title'),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Text(
-                  'Description',
-                  style: Text_style.getBody(
-                    Font_Weight: FontWeight.w500,
-                    Size: 17,
+                TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'please enter title of task';
+                    }
+                  },
+                  controller: title,
+                  decoration: InputDecoration(hintText: 'Enter title'),
+                ),
+        
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Text(
+                    'Description',
+                    style: Text_style.getBody(
+                      Font_Weight: FontWeight.w500,
+                      Size: 17,
+                    ),
                   ),
                 ),
-              ),
-              TextFormField(
-                controller: description,
-
-                maxLines: 3,
-                decoration: InputDecoration(hintText: 'Enter description'),
-              ),
-
-              Select_Date(context),
-
-              Select_Time(context),
-              Select_Color(),
-            ],
+                TextFormField(
+                  controller: description,
+        
+                  maxLines: 3,
+                  decoration: InputDecoration(hintText: 'Enter description'),
+                ),
+        
+                Select_Date(context),
+        
+                Select_Time(context),
+                Select_Color(),
+              ],
+            ),
           ),
         ),
       ),
@@ -282,7 +284,7 @@ class _AddEdit_TaskState extends State<AddEdit_Task> {
                     Navigator.of(context).push(
                       showPicker(
                         backgroundColor:
-                            isdark ? App_Color.white : App_Color.black,
+                            isdark ? App_Color.black : App_Color.white,
                         context: context,
                         value: selectStartTime,
                         sunrise: TimeOfDay(hour: 6, minute: 0), // optional
@@ -332,7 +334,7 @@ class _AddEdit_TaskState extends State<AddEdit_Task> {
                     Navigator.of(context).push(
                       showPicker(
                         backgroundColor:
-                            isdark ? App_Color.white : App_Color.black,
+                            isdark ? App_Color.black : App_Color.white,
                         context: context,
                         value: selectEndTime,
                         sunrise: TimeOfDay(hour: 6, minute: 0), // optional

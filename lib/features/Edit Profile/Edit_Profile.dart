@@ -31,6 +31,7 @@ class _EditProfile_ScreenState extends State<EditProfile_Screen> {
     var image = Local_Helper.getUserData(Local_Helper.KeyImage);
     TextEditingController nameController = TextEditingController(text: name);
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         actions: [
           Padding(
@@ -55,89 +56,92 @@ class _EditProfile_ScreenState extends State<EditProfile_Screen> {
           child: Icon(Icons.arrow_back, color: App_Color.PrimaryColorBlue),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          GestureDetector(
-            onTap: () {
-              ButtomSheetImage(context);
-            },
-            child: Stack(
-              children: [
-                CircleAvatar(
-                  radius: 81,
-                  backgroundColor: App_Color.PrimaryColorBlue,
-                  child: CircleAvatar(
-                    radius: 80,
-                    backgroundColor: App_Color.white,
-                    backgroundImage:
-                        Path != null
-                            ? FileImage(File(Path!))
-                            : FileImage(File(image)),
-                  ),
-                ),
-                Positioned(
-                  right: 5,
-                  bottom: 5,
-                  child: Container(
-                    width: 35,
-                    height: 35,
-                    decoration: BoxDecoration(
-                      color: isdark ? App_Color.white : App_Color.black,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Icon(
-                      Icons.camera_alt,
-                      color: App_Color.PrimaryColorBlue,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Gap(50),
-
-          Divider(
-            thickness: 1,
-            indent: 30,
-            endIndent: 30,
-            color: App_Color.PrimaryColorBlue,
-          ),
-          Gap(50),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  '$name',
-                  style: Text_style.getTital(
-                    color: App_Color.PrimaryColorBlue,
-                    Font_Weight: FontWeight.w600,
-                    Size: 22,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    ButtomSheetName(context, nameController);
-                  },
-                  child: CircleAvatar(
-                    radius: 18,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GestureDetector(
+              onTap: () {
+                ButtomSheetImage(context, isdark);
+              },
+              child: Stack(
+                children: [
+                  CircleAvatar(
+                    radius: 81,
                     backgroundColor: App_Color.PrimaryColorBlue,
                     child: CircleAvatar(
-                      backgroundColor: isdark ? App_Color.white : App_Color.black,
-                      radius: 17,
+                      radius: 80,
+                      backgroundColor: App_Color.white,
+                      backgroundImage:
+                          Path != null
+                              ? FileImage(File(Path!))
+                              : FileImage(File(image)),
+                    ),
+                  ),
+                  Positioned(
+                    right: 5,
+                    bottom: 5,
+                    child: Container(
+                      width: 35,
+                      height: 35,
+                      decoration: BoxDecoration(
+                        color: isdark ? App_Color.black : App_Color.white,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                       child: Icon(
-                        Icons.edit,
+                        Icons.camera_alt,
                         color: App_Color.PrimaryColorBlue,
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+            Gap(50),
+
+            Divider(
+              thickness: 1,
+              indent: 30,
+              endIndent: 30,
+              color: App_Color.PrimaryColorBlue,
+            ),
+            Gap(50),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '$name',
+                    style: Text_style.getTital(
+                      color: App_Color.PrimaryColorBlue,
+                      Font_Weight: FontWeight.w600,
+                      Size: 22,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      ButtomSheetName(context, nameController, isdark);
+                    },
+                    child: CircleAvatar(
+                      radius: 18,
+                      backgroundColor: App_Color.PrimaryColorBlue,
+                      child: CircleAvatar(
+                        backgroundColor:
+                            isdark ? App_Color.black : App_Color.white,
+                        radius: 17,
+                        child: Icon(
+                          Icons.edit,
+                          color: App_Color.PrimaryColorBlue,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -145,53 +149,57 @@ class _EditProfile_ScreenState extends State<EditProfile_Screen> {
   Future<dynamic> ButtomSheetName(
     BuildContext context,
     TextEditingController nameController,
+    bool isdark,
   ) {
     return showModalBottomSheet(
+      isScrollControlled: true,
       context: context,
       builder: (contsxt) {
-        return Container(
-          width: double.infinity,
-          height: 200,
-          decoration: BoxDecoration(
-            color: App_Color.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(15),
-              topRight: Radius.circular(15),
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Container(
+            width: double.infinity,
+            height: 200,
+            decoration: BoxDecoration(
+              color: isdark ? App_Color.black : App_Color.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+              ),
             ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: TextFormField(controller: nameController),
-              ),
-
-              Gap(20),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Main_Button(
-                  height: 60,
-                  text: 'Update Your Name',
-                  onPressed: () {
-                    setState(() {
-                      Local_Helper.cachUserData(
-                        Local_Helper.KeyName,
-                        nameController.text,
-                      );
-                      Navigator.pop(context);
-                    });
-                  },
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: TextFormField(controller: nameController),
                 ),
-              ),
-            ],
+          
+                Gap(20),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Main_Button(
+                    height: 60,
+                    text: 'Update Your Name',
+                    onPressed: () {
+                      setState(() {
+                        Local_Helper.cachUserData(
+                          Local_Helper.KeyName,
+                          nameController.text,
+                        );
+                        Navigator.pop(context);
+                      });
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
         );
       },
     );
   }
 
-  Future<dynamic> ButtomSheetImage(BuildContext context) {
+  Future<dynamic> ButtomSheetImage(BuildContext context, bool isdark) {
     return showModalBottomSheet(
       context: context,
       builder: (contsxt) {
@@ -199,7 +207,7 @@ class _EditProfile_ScreenState extends State<EditProfile_Screen> {
           width: double.infinity,
           height: 200,
           decoration: BoxDecoration(
-            color: App_Color.white,
+            color: isdark ? App_Color.black : App_Color.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15),
               topRight: Radius.circular(15),

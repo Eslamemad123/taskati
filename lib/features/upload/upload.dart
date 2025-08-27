@@ -31,7 +31,6 @@ class _Upload_ScreenState extends State<Upload_Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: App_Color.white,
         scrolledUnderElevation: 0,
         actions: [
           Padding(

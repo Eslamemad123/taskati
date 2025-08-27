@@ -24,11 +24,11 @@ class MainApp extends StatelessWidget {
     return ValueListenableBuilder(
       valueListenable: Local_Helper.userBox.listenable(),
       builder: (context, box, ciled) {
-          bool isdark = Local_Helper.getUserData(Local_Helper.KeyisDark) ?? false;
+        bool isdark = Local_Helper.getUserData(Local_Helper.KeyisDark) ?? false;
 
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          themeMode: isdark ? ThemeMode.light : ThemeMode.dark,
+          themeMode: isdark ? ThemeMode.dark : ThemeMode.light,
           theme: Light_Them.lightTheme,
           darkTheme: Dark_Them.darkTheme,
           home: Splash_Screen(),

@@ -20,7 +20,7 @@ class Splash_Screen extends StatefulWidget {
 class _Splash_ScreenState extends State<Splash_Screen> {
  @override
   void initState() {
-    Future.delayed(Duration(seconds: 2),(){
+    Future.delayed(Duration(seconds: 3),(){
 
     bool isUploadImage=Local_Helper.getUserData(Local_Helper.KeyisUpload)??false;
     isUploadImage?pushReplacement(context, Home_Screen())
