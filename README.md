@@ -20,7 +20,6 @@
 </p>
 >Tasks Screen 
 
->check on the photo uploded and the name
 <p float="left">
     <img src="Screen App\tasks.png" width="25%" />
 </p>
@@ -36,21 +35,15 @@
 <p float="left">
     <img src="Screen App\darkThem.png" width="25%" />
 </p>
->Upload photo Screen 
->Using packeg image Picker to upload photo from galary or camera and show photo on the screen 
->check on the photo uploded and the name
+
 <p float="left">
     <img src="Screen App\editProfile.png" width="25%" />
 </p>
->Upload photo Screen 
->Using packeg image Picker to upload photo from galary or camera and show photo on the screen 
->check on the photo uploded and the name
+
 <p float="left">
     <img src="Screen App\addTask.png" width="25%" />
 </p>
->Upload photo Screen 
->Using packeg image Picker to upload photo from galary or camera and show photo on the screen 
->check on the photo uploded and the name
+
 <p float="left">
     <img src="Screen App\editTask.png" width="25%" />
 </p>
