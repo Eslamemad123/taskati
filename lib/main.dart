@@ -17,7 +17,6 @@ Future<void> main() async {
 
 class MainApp extends StatelessWidget {
   MainApp({super.key});
-  bool isdark = Local_Helper.getUserData(Local_Helper.KeyisDark) ?? false;
 
   @override
   Widget build(BuildContext context) {

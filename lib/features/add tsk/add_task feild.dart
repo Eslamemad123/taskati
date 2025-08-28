@@ -252,7 +252,7 @@ class _AddEdit_TaskState extends State<AddEdit_Task> {
   }
 
   Row Select_Time(BuildContext context) {
-    bool isdark = Local_Helper.getUserData(Local_Helper.KeyisDark);
+        bool isdark = Local_Helper.getUserData(Local_Helper.KeyisDark) ?? false;
     return Row(
       children: [
         Expanded(
