@@ -38,6 +38,7 @@ class _AddEdit_TaskState extends State<AddEdit_Task> {
     hour: DateTime.now().add(Duration(hours: 1)).hour,
     minute: DateTime.now().minute,
   );
+        bool isdark = Local_Helper.getUserData(Local_Helper.KeyisDark) ?? false;
 
   @override
   void initState() {
@@ -252,7 +253,6 @@ class _AddEdit_TaskState extends State<AddEdit_Task> {
   }
 
   Row Select_Time(BuildContext context) {
-        bool isdark = Local_Helper.getUserData(Local_Helper.KeyisDark) ?? false;
     return Row(
       children: [
         Expanded(

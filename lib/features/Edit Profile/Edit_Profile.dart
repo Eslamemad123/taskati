@@ -150,7 +150,7 @@ class _EditProfile_ScreenState extends State<EditProfile_Screen> {
     bool isdark,
   ) {
     return showModalBottomSheet(
-      isScrollControlled: true,
+      //isScrollControlled: true,
       context: context,
       builder: (contsxt) {
         return Padding(
@@ -168,7 +168,7 @@ class _EditProfile_ScreenState extends State<EditProfile_Screen> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 15),
                   child: TextFormField(controller: nameController),
                 ),
           

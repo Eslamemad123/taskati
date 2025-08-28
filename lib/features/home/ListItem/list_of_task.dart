@@ -91,7 +91,7 @@ class _ItemListTaskState extends State<ItemListTask> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 120,
+     // height: 120,
       child: Dismissible(
         key: UniqueKey(),
         onDismissed: (direction) {
@@ -200,11 +200,14 @@ class _ItemListTaskState extends State<ItemListTask> {
                   ),
                 ),
                 Gap(5),
-                VerticalDivider(
-                  thickness: 2,
-                  color: App_Color.grey,
-                  endIndent: 5,
-                  indent: 5,
+                SizedBox(
+                  height: 100,
+                  child: VerticalDivider(
+                    thickness: 2,
+                    color: App_Color.grey,
+                    endIndent: 5,
+                    indent: 5,
+                  ),
                 ),
                 RotatedBox(
                   quarterTurns: 3,
