@@ -97,7 +97,7 @@ class _EditProfile_ScreenState extends State<EditProfile_Screen> {
             ),
           ),
           Gap(50),
-
+      
           Divider(
             thickness: 1,
             indent: 30,
@@ -150,16 +150,14 @@ class _EditProfile_ScreenState extends State<EditProfile_Screen> {
     bool isdark,
   ) {
     return showModalBottomSheet(
-      isScrollControlled: true,
+      //isScrollControlled: true,
       context: context,
       builder: (contsxt) {
         return Padding(
-          padding: EdgeInsets.only(
-            bottom: MediaQuery.of(context).viewInsets.bottom,
-          ),
+          padding: const EdgeInsets.only(bottom: 10),
           child: Container(
             width: double.infinity,
-
+            height: 200,
             decoration: BoxDecoration(
               color: isdark ? App_Color.black : App_Color.white,
               borderRadius: BorderRadius.only(
@@ -168,19 +166,12 @@ class _EditProfile_ScreenState extends State<EditProfile_Screen> {
               ),
             ),
             child: Column(
-              mainAxisSize: MainAxisSize.min,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 25,
-                    vertical: 15,
-                  ),
-                  child: TextFormField(
-                    controller: nameController,
-                    autofocus: true,
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 15),
+                  child: TextFormField(controller: nameController),
                 ),
-
+          
                 Gap(20),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -198,7 +189,6 @@ class _EditProfile_ScreenState extends State<EditProfile_Screen> {
                     },
                   ),
                 ),
-                SizedBox(height: 20),
               ],
             ),
           ),

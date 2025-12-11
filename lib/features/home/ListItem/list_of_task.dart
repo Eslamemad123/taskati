@@ -38,7 +38,7 @@ class ListOfTask extends StatelessWidget {
                   Gap(20),
                   Text(
                     textAlign: TextAlign.center,
-                    'You don’t have any tasks yet. Add new tasks to make your days more productive.',
+                    '!yet tasks any have not do You.\n roductive. days your make to tasks new Add',
                     style: Text_style.getSmall(),
                   ),
                 ],
@@ -50,50 +50,10 @@ class ListOfTask extends StatelessWidget {
                 return ItemListTask(
                   model: tasks[index],
                   onComplete: () {
-                    if (tasks[index].isComplete) {
-                      box.put(
-                        tasks[index].id,
-                        tasks[index].copyWith(isCompleted: false),
-                      );
-                    } else {
-                      box.put(
-                        tasks[index].id,
-                        tasks[index].copyWith(isCompleted: true),
-                      );
-                    }
+                    box.put(tasks[index].id, tasks[index].copyWith(isCompleted: true));
                   },
                   onDelete: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: Text("Delete Task"),
-                          content: Text(
-                            "Are you sure you want to delete this task?",
-                          ),
-                          actions: [
-                            TextButton(
-                              onPressed: () {
-                                Navigator.pop(context); // يغلق الرسالة فقط
-                              },
-                              child: Text("No"),
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                Local_Helper.taskBox.delete(tasks[index].id);
-                                Navigator.pop(
-                                  context,
-                                ); // يغلق الرسالة بعد الحذف
-                              },
-                              child: Text(
-                                "Yes",
-                                style: TextStyle(color: Colors.red),
-                              ),
-                            ),
-                          ],
-                        );
-                      },
-                    );
+                    Local_Helper.taskBox.delete(tasks[index].id);
                   },
                 );
               },
@@ -131,7 +91,7 @@ class _ItemListTaskState extends State<ItemListTask> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      // height: 120,
+     // height: 120,
       child: Dismissible(
         key: UniqueKey(),
         onDismissed: (direction) {
@@ -144,27 +104,16 @@ class _ItemListTaskState extends State<ItemListTask> {
 
         background: Container(
           padding: const EdgeInsets.all(12),
-          decoration:
-              (!widget.model.isComplete)
-                  ? BoxDecoration(
-                    color: App_Color.green,
-                    borderRadius: BorderRadius.circular(15),
-                  )
-                  : BoxDecoration(
-                    color: App_Color.pink,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
+          decoration: BoxDecoration(
+            color: App_Color.green,
+            borderRadius: BorderRadius.circular(15),
+          ),
           child: Row(
             children: [
-              Icon(
-                (!widget.model.isComplete)
-                    ? Icons.done_outline_rounded
-                    : Icons.unpublished_sharp,
-                color: App_Color.white,
-              ),
+              Icon(Icons.done_outline_rounded, color: App_Color.white),
               Gap(8),
               Text(
-                (!widget.model.isComplete) ? 'Complete' : 'Un Complete',
+                'Complete',
                 style: Text_style.getSmall(
                   Size: 15,
                   color: App_Color.white,
@@ -204,10 +153,7 @@ class _ItemListTaskState extends State<ItemListTask> {
             padding: const EdgeInsets.all(12),
             margin: EdgeInsets.symmetric(horizontal: 8),
             decoration: BoxDecoration(
-              color:
-                  widget.model.isComplete
-                      ? App_Color.green
-                      : colors[widget.model.color],
+              color: widget.model.isComplete?App_Color.green:colors[widget.model.color],
               borderRadius: BorderRadius.circular(18),
             ),
             child: Row(
