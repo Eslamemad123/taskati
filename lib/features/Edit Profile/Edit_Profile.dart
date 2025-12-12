@@ -3,7 +3,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:taskati/components/buttons/main%20button.dart';
 import 'package:taskati/core/extentions/navigation.dart';
@@ -14,7 +13,7 @@ import 'package:taskati/features/home/home%20screen.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class EditProfile_Screen extends StatefulWidget {
-  EditProfile_Screen({super.key});
+  const EditProfile_Screen({super.key});
 
   @override
   State<EditProfile_Screen> createState() => _EditProfile_ScreenState();
@@ -111,7 +110,7 @@ class _EditProfile_ScreenState extends State<EditProfile_Screen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  '$name',
+                  name,
                   style: Text_style.getTital(
                     color: App_Color.PrimaryColorBlue,
                     Font_Weight: FontWeight.w600,

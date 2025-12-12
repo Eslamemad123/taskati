@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:hive/hive.dart';
 import 'package:lottie/lottie.dart';
 import 'package:taskati/core/extentions/navigation.dart';
 import 'package:taskati/core/services/helpel.dart';

@@ -3,7 +3,7 @@ import 'package:taskati/core/utils/app%20color.dart';
 import 'package:taskati/core/utils/text%20style.dart';
 
 class Main_Button extends StatelessWidget {
-  Main_Button({
+  const Main_Button({
     super.key,
     required this.text,
     this.width = double.infinity,

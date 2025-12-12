@@ -1,10 +1,8 @@
-import 'dart:io';
 
 import 'package:day_night_time_picker/lib/daynight_timepicker.dart';
 import 'package:day_night_time_picker/lib/state/time.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:taskati/components/buttons/main%20button.dart';
 import 'package:taskati/core/Model/task%20model.dart';
@@ -15,7 +13,7 @@ import 'package:taskati/core/utils/app%20color.dart';
 import 'package:taskati/core/utils/text%20style.dart';
 
 class AddEdit_Task extends StatefulWidget {
-  AddEdit_Task({super.key, this.model});
+  const AddEdit_Task({super.key, this.model});
   final Task_Model? model;
   @override
   State<AddEdit_Task> createState() => _AddEdit_TaskState();
@@ -136,6 +134,7 @@ class _AddEdit_TaskState extends State<AddEdit_Task> {
                     if (value == null || value.isEmpty) {
                       return 'please enter title of task';
                     }
+                    return null;
                   },
                   controller: title,
                   decoration: InputDecoration(hintText: 'Enter title'),
@@ -345,16 +344,16 @@ class _AddEdit_TaskState extends State<AddEdit_Task> {
                             selectEndTime = newTime;
                           });
 
-                          int time_now =
+                          int timeNow =
                               selectEndTime.hour * 60 + selectEndTime.minute;
-                          print(time_now);
+                          print(timeNow);
 
-                          int min_time =
+                          int minTime =
                               selectStartTime.hour * 60 +
                               selectStartTime.minute;
-                          print(min_time);
+                          print(minTime);
 
-                          if (time_now > min_time) {
+                          if (timeNow > minTime) {
                             setState(() {
                               endTime.text = selectEndTime.format(context);
                             });

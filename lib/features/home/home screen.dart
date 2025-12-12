@@ -13,7 +13,7 @@ import 'package:taskati/features/home/header/home_header.dart';
 
 // ignore: must_be_immutable
 class Home_Screen extends StatefulWidget {
-  Home_Screen({super.key});
+  const Home_Screen({super.key});
 
   @override
   State<Home_Screen> createState() => _Home_ScreenState();

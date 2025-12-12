@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:taskati/core/utils/app%20color.dart';
 
 class Text_style {
   static TextStyle getTital({

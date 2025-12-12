@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:taskati/core/utils/app%20color.dart';
-import 'package:taskati/core/utils/text%20style.dart';
 
 class Light_Them {
   static get lightTheme => ThemeData(
@@ -30,7 +29,7 @@ class Light_Them {
 
     fontFamily: 'Poppins',
     scaffoldBackgroundColor: App_Color.white,
-    appBarTheme: AppBarTheme(color: App_Color.white),
+    appBarTheme: AppBarTheme(backgroundColor: App_Color.white),
     colorScheme: ColorScheme.fromSeed(
       seedColor: App_Color.PrimaryColorBlue,
       onSurface: App_Color.black,

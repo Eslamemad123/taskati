@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:taskati/core/Thems/dark%20them.dart';
 import 'package:taskati/core/Thems/light%20them.dart';
 import 'package:taskati/core/services/helpel.dart';
-import 'package:taskati/core/utils/app%20color.dart';
 import 'package:taskati/features/splash/splash.dart';
 
 Future<void> main() async {
@@ -16,7 +14,7 @@ Future<void> main() async {
 }
 
 class MainApp extends StatelessWidget {
-  MainApp({super.key});
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {

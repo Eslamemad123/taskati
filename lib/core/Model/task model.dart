@@ -42,12 +42,12 @@ class Task_Model {
     return (Task_Model(
       id: id,
       title: title ?? this.title,
-      describtion: description ?? this.describtion,
+      describtion: description ?? describtion,
       date: date ?? this.date,
       startTime: startTime ?? this.startTime,
-      EndTime: endTime ?? this.EndTime,
+      EndTime: endTime ?? EndTime,
       color: color ?? this.color,
-      isComplete: isCompleted ?? this.isComplete,
+      isComplete: isCompleted ?? isComplete,
     ));
   }
 }

@@ -24,14 +24,14 @@ class Hedar_Date extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              '$formatDate',
+              formatDate,
               style: Text_style.getTital(
                 Size: 20,
                 Font_Weight: FontWeight.bold,
               ),
             ),
             Text(
-              '$formatTime',
+              formatTime,
               style: Text_style.getTital(
                 Size: 20,
                 Font_Weight: FontWeight.bold,

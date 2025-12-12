@@ -34,7 +34,6 @@ class Home_Header extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            log('$isdark  homeeeeeeeeee');
 
             pushTO(context, EditProfile_Screen());
           },

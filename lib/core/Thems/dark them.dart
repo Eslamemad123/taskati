@@ -32,7 +32,7 @@ class Dark_Them {
 
     fontFamily: 'Poppins',
     scaffoldBackgroundColor: App_Color.black,
-    appBarTheme: AppBarTheme(color: App_Color.black),
+    appBarTheme: AppBarTheme(backgroundColor: App_Color.black),
     colorScheme: ColorScheme.fromSeed(
       seedColor: App_Color.PrimaryColorBlue,
       onSurface: App_Color.white,
