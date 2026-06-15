@@ -1,94 +1,195 @@
 # ✅ Taskati – Task Management App
 
-## 📱 About The App
-**Taskati** is a simple and efficient task management mobile application that helps users organize their daily tasks with ease.  
-The app allows users to create tasks with a title, description, date, and time, store them locally using **Hive**, and manage tasks through an intuitive and clean UI.
 
-Users can also personalize their experience by adding a profile name and profile image, with full support for dark mode.
+## 📱 About The App
+
+**Taskati** is a lightweight task management application built with Flutter to help users organize their daily activities efficiently. Users can create, manage, complete, and delete tasks while enjoying a personalized experience with profile customization, local data persistence, and dark mode support.
+
+---
+
+
+## 🎥 Demo Video
+[Watch the Demo Video Here](https://www.linkedin.com/posts/eslam-emad-2218712a7_flutter-hive-imagepicker-activity-7366939834600374272-nkwg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEn9DvkBIvMkEsL6hvHxiCUaWaCuovYccnw)
+
+---
+
+## 📊 Project Statistics
+
+* 10+ Screens
+* Local-First Application
+* Hive Database Integration
+* Profile Customization
+* Task Scheduling System
+* Dark & Light Themes
+* Swipe Actions for Task Management
+* Lottie Animations
+* Local Data Persistence
+* Responsive Flutter UI
 
 ---
 
 ## ✨ Features
 
 ### 👤 User Profile
-- Enter user name on first launch
-- Upload profile image from **camera or gallery**
-- Edit profile information anytime
+
+✔ Set User Name
+
+✔ Upload Profile Picture
+
+✔ Capture Image from Camera
+
+✔ Select Image from Gallery
+
+✔ Edit Profile Information
 
 ---
 
 ### 📝 Task Management
-- Add tasks with:
-  - Title
-  - Description
-  - Date
-  - Time
-- View tasks based on selected date
-- Tasks are stored locally using **Hive**
-- Empty state screen when no tasks exist
+
+✔ Create Tasks
+
+✔ Edit Existing Tasks
+
+✔ Delete Tasks
+
+✔ Mark Tasks as Completed
+
+✔ Add Task Title
+
+✔ Add Task Description
+
+✔ Select Date
+
+✔ Select Time
+
+✔ View Tasks by Date
+
+✔ Local Task Storage Using Hive
 
 ---
 
-### 🗂️ Task Interaction
-- Each task is displayed inside a **Dismissible widget**
-- Swipe actions:
-  - ➡️ Swipe right → Delete task
-  - ⬅️ Swipe left → Mark task as completed
+### 🗂️ Task Actions
+
+✔ Swipe Right to Delete Tasks
+
+✔ Swipe Left to Complete Tasks
+
+✔ Dismissible Task Cards
+
+✔ Empty State Handling
 
 ---
 
-### 🌙 UI & Experience
-- Splash screen with **Lottie animation**
-- Date picker bar to filter tasks by date
-- Dark mode support
-- Clean and user-friendly interface
+### 🌙 User Experience
+
+✔ Dark Mode Support
+
+✔ Lottie Animated Splash Screen
+
+✔ Date Filtering Bar
+
+✔ Clean & Minimal UI
+
+✔ Fast Offline Experience
 
 ---
 
-## 🧠 App Flow
-1. Splash screen with animation
-2. User enters name and uploads profile photo
-3. Main task screen appears
-4. Select a date to view tasks for that day
-5. Add, edit, complete, or delete tasks
-6. Edit profile or switch theme anytime
+## 📸 App Screens
+
+### Splash & Onboarding
+
+<p align="center">
+  <img src="Screen App/splash.png" width="220"/>
+  <img src="Screen App/upload.png" width="220"/>
+</p>
+
+---
+
+### Task Management
+
+<p align="center">
+  <img src="Screen App/tasksEmpty.png" width="220"/>
+  <img src="Screen App/tasks.png" width="220"/>
+  <img src="Screen App/addTask.png" width="220"/>
+</p>
+
+---
+
+### Date & Time Selection
+
+<p align="center">
+  <img src="Screen App/date.png" width="220"/>
+  <img src="Screen App/time.png" width="220"/>
+</p>
+
+---
+
+### Task Editing
+
+<p align="center">
+  <img src="Screen App/editTask.png" width="220"/>
+</p>
+
+---
+
+### Profile & Settings
+
+<p align="center">
+  <img src="Screen App/editProfile.png" width="220"/>
+  <img src="Screen App/darkThem.png" width="220"/>
+</p>
+
+---
+
+## 🏗️ Architecture
+
+The application follows a modular Flutter architecture with a clear separation between UI, local storage, and business logic, ensuring maintainability and scalability while keeping the app lightweight and efficient.
 
 ---
 
 ## 🛠️ Tech Stack
-- Flutter & Dart
-- Hive (Local Storage)
-- Image Picker
-- Lottie Animation
-- Stateful / Local State Management
+
+### Core Technologies
+
+* Flutter
+* Dart
+
+### Local Storage
+
+* Hive Database
+
+### Media & Assets
+
+* Image Picker
+* Lottie Animations
+
+### State Management
+
+* Stateful Widgets
+* Local State Management
+
+### Utilities
+
+* Date & Time Picker
+* Dismissible Widgets
 
 ---
 
-## 📸 App Screenshots
+## 🔥 Technical Highlights
 
-<p align="center">
-  <img src="Screen App/splash.png" width="200" />
-  <img src="Screen App/upload.png" width="200" />
-  <img src="Screen App/tasksEmpty.png" width="200" />
-</p>
-
-<p align="center">
-  <img src="Screen App/tasks.png" width="200" />
-  <img src="Screen App/time.png" width="200" />
-  <img src="Screen App/date.png" width="200" />
-</p>
-
-<p align="center">
-  <img src="Screen App/darkThem.png" width="200" />
-  <img src="Screen App/editProfile.png" width="200" />
-  <img src="Screen App/addTask.png" width="200" />
-</p>
-
-<p align="center">
-  <img src="Screen App/editTask.png" width="200" />
-</p>
+* Persistent local storage using Hive for fast offline access.
+* Swipe-based task interactions using Dismissible widgets.
+* User profile customization with camera and gallery image support.
+* Date-based task filtering and scheduling system.
+* Dark mode implementation for improved user experience.
+* Lightweight architecture with zero backend dependency.
 
 ---
 
 ## 👨‍💻 Author
-Developed by **Eslam Emad** using Flutter
+
+Developed by **Eslam Emad**
+
+<p align="center">
+  <b>Flutter Developer</b>
+</p>
